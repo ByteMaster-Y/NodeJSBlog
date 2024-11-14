@@ -63,15 +63,15 @@ const getTotalCount = async () => {
 };
 
 // 최신 게시글 n개 가져오기
-const getRecentPosts = async (limit = 5) => {
-    try {
-        const sql = `SELECT * FROM posts ORDER BY post_id DESC LIMIT ?`;
-        const result = await db.runSql(sql, [limit]);
-        return result;
-    } catch (error) {
-        throw "SQL Query Error on getRecentPosts";
-    }
-};
+// const getRecentPosts = async (limit = 5) => {
+//     try {
+//         const sql = `SELECT * FROM posts ORDER BY post_id DESC LIMIT ?`;
+//         const result = await db.runSql(sql, [limit]);
+//         return result;
+//     } catch (error) {
+//         throw "SQL Query Error on getRecentPosts";
+//     }
+// };
 
 // 게시글 삭제
 const deletePost = async (postId) => {
@@ -102,7 +102,6 @@ module.exports = {
     getPostById,
     getList,
     getTotalCount,
-    getRecentPosts,
     deletePost
     
 };

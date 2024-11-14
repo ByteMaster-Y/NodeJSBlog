@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const controller = require('../controller/boardController');
 
-router.get('/', controller.post);
+// router.get('/', controller.post);
 router.get('/write', controller.write);
 router.post('/write', controller.writePost); // POST로 변경
 router.get('/list', controller.list);

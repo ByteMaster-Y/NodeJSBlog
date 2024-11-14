@@ -68,19 +68,19 @@ const list = async (req, res) => {
 };
 
 
-const post = (req, res) => {
-    try {
-        const loginUserInfo = common.checkLogin(req, res, true); // 로그인 체크
+// const post = (req, res) => {
+//     try {
+//         const loginUserInfo = common.checkLogin(req, res, true); // 로그인 체크
         
-        if (!loginUserInfo) {
-            return; // 로그인하지 않은 경우, checkLogin에서 리디렉션 처리
-        }
+//         if (!loginUserInfo) {
+//             return; // 로그인하지 않은 경우, checkLogin에서 리디렉션 처리
+//         }
 
-        res.render('board/post', { loginUserInfo }); // samplePost 뷰로 렌더링
-    } catch (error) {
-        res.status(500).send('500 ERROR: ' + error);
-    }
-};
+//         res.render('board/post', { loginUserInfo }); // samplePost 뷰로 렌더링
+//     } catch (error) {
+//         res.status(500).send('500 ERROR: ' + error);
+//     }
+// };
 
 // 게시글 보기 페이지 렌더링
 const viewPost = async (req, res) => {
@@ -127,4 +127,4 @@ const deletePost = async (req, res) => {
     }
 };
 
-module.exports = { post, write, writePost, list, viewPost, deletePost };
+module.exports = { write, writePost, list, viewPost, deletePost };
