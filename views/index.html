@@ -1,0 +1,31 @@
+{% include "include/header.html" %}
+<!-- Main Content -->
+<div class="container px-4 px-lg-5">
+    <div class="row gx-4 gx-lg-5 justify-content-center">
+        <div class="col-md-10 col-lg-8 col-xl-7">
+            <!-- 최근 게시글 목록 -->
+            {% if recentPosts and recentPosts.length > 0 %}
+                {% for post in recentPosts %}
+                    <div class="post-preview">
+                        <a href="/board/view/{{ post.post_id }}">
+                            <h2 class="post-title">{{ post.title }}</h2>
+                            <p class="post-meta">
+                                Posted by {{ post.user_id }} on {{common.dateFormat(post.regdate)}}
+
+                            </p>
+                        </a>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <p>최근 작성된 게시글이 없습니다.</p>
+            {% endif %}
+            
+            <!-- Pager -->
+            <div class="d-flex justify-content-end mb-4">
+                <a class="btn btn-black text-uppercase" href="/board/list">다른 포스트 보기 →</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Footer -->
+{% include "include/footer.html" %}
