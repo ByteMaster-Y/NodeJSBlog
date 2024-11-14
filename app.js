@@ -57,3 +57,26 @@ app.use((req,res) => {
 app.listen(80, () => {
     console.log('80번 포트에서 express서버 대기중..');
 });
+
+app.get('/some-endpoint', async (req, res) => {
+    let result; // SQL 실행 결과를 저장할 변수
+  
+    try {
+      const sql = 'SELECT * FROM some_table';
+      result = await runSql(sql); // runSql 함수 호출
+  
+      // 중복 응답을 피하기 위해 headersSent를 체크
+      if (!res.headersSent) {
+        res.json(result); // 결과 응답
+      }
+  
+    } catch (error) {
+      console.error(error);
+  
+      // 에러 발생 시에도 이미 응답이 전송되었는지 확인 후 응답
+      if (!res.headersSent) {
+        res.status(500).send('Internal Server Error'); // 오류 응답
+      }
+    }
+  });
+  
