@@ -127,6 +127,55 @@ const deletePost = async (req, res) => {
     }
 };
 
+// 게시글 수정 페이지 렌더링
+const editPost = async (req, res) => {
+    try {
+        const loginUserInfo = common.checkLogin(req, res, true);
+        if (!loginUserInfo) {
+            return; // 로그인하지 않은 경우 리디렉션 처리
+        }
+
+        const { postId } = req.params; // URL 파라미터에서 postId 가져오기
+        const postData = await boardModel.getPostById(postId);
+
+        // 작성자 확인
+        if (postData.user_id !== loginUserInfo.user_id) {
+            return res.status(403).send('자신이 작성한 글만 수정할 수 있습니다.');
+        }
+
+        // 수정 페이지 렌더링
+        res.render('board/edit', { loginUserInfo, postData });
+    } catch (error) {
+        res.status(500).send('게시글 수정 페이지 로드 중 오류가 발생했습니다.');
+    }
+};
+
+// 게시글 수정 처리
+const updatePost = async (req, res) => {
+    try {
+        const loginUserInfo = common.checkLogin(req, res, true);
+        if (!loginUserInfo) {
+            return;
+        }
+
+        const { postId } = req.params;
+        const { title, content } = req.body;
+
+        const postData = await boardModel.getPostById(postId);
+
+        // 작성자 확인
+        if (postData.user_id !== loginUserInfo.user_id) {
+            return res.status(403).send('자신이 작성한 글만 수정할 수 있습니다.');
+        }
+
+        // 게시글 수정
+        await boardModel.updatePost(postId, title, content);
+
+        res.redirect(`/board/view/${postId}`); // 수정 후 해당 글 보기로 리디렉션
+    } catch (error) {
+        res.status(500).send('게시글 수정 중 오류가 발생했습니다.');
+    }
+};
 
 
-module.exports = { write, writePost, list, viewPost, deletePost };
+module.exports = { write, writePost, list, viewPost, deletePost, editPost, updatePost };

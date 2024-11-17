@@ -99,12 +99,28 @@ const getRecentPosts = async (limit) => {
     }
 };
 
+
+// 게시글 수정
+const updatePost = async (postId, title, content) => {
+    try {
+        const sql = 'UPDATE posts SET title = ?, content = ? WHERE post_id = ?';
+        const params = [title, content, postId];
+        const result = await db.runSql(sql, params);
+
+        console.log(`Post with ID ${postId} updated`);
+        return result;
+    } catch (error) {
+        throw "SQL Query Error on updatePost";
+    }
+};
+
 module.exports = {
     writePost,
     getPostById,
     getList,
     getTotalCount,
     deletePost,
-    getRecentPosts
+    getRecentPosts,
+    updatePost
     
 };
