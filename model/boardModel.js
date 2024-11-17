@@ -87,21 +87,24 @@ const deletePost = async (postId) => {
     }
 };
 
-module.exports = {
-    writePost,
-    getPostById,
-    getList,
-    getTotalCount,
-    deletePost // 삭제 기능 추가
+// 최신 게시글 1개 가져오기
+const getRecentPosts = async (limit) => {
+    try {
+        const sql = `SELECT * FROM posts ORDER BY post_id DESC LIMIT ?`;
+        const result = await db.runSql(sql, [limit]); // db.runSql로 수정
+        return result;
+    } catch (error) {
+        console.error("SQL Query Error in getRecentPosts:", error);
+        throw error;
+    }
 };
 
-
-
 module.exports = {
     writePost,
     getPostById,
     getList,
     getTotalCount,
-    deletePost
+    deletePost,
+    getRecentPosts
     
 };
