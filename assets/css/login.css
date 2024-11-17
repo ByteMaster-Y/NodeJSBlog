@@ -1,0 +1,130 @@
+:root {
+    --primary-color: #a29bfe;
+    --secondary-color: #ffeaa7;
+    --text-color: #2d3436;
+    --background-color: #f5f6fa;
+    --input-bg: #ffffff;
+    --input-border: #dfe6e9;
+    --input-focus: #81ecec;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 400px;
+    width: 100%;
+    background: var(--input-bg);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.header {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: #fff;
+    text-align: center;
+    padding: 2rem 1rem;
+}
+
+.header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.header p {
+    font-size: 0.9rem;
+}
+
+.form-container {
+    padding: 2rem 1.5rem;
+}
+
+.form-container label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.form-container input {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid var(--input-border);
+    border-radius: 5px;
+    background: var(--input-bg);
+    font-size: 1rem;
+    transition: border 0.3s;
+}
+
+.form-container input:focus {
+    border-color: var(--input-focus);
+    outline: none;
+}
+
+.form-container button {
+    width: 100%;
+    padding: 0.8rem;
+    background: var(--primary-color);
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.form-container button:hover {
+    background: var(--secondary-color);
+}
+
+.footer {
+    text-align: center;
+    padding: 1rem 0;
+    font-size: 0.9rem;
+    color: #b2bec3;
+}
+
+.footer a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer a:hover {
+    color: var(--secondary-color);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 480px) {
+    .header h1 {
+        font-size: 1.5rem;
+    }
+
+    .form-container {
+        padding: 1.5rem;
+    }
+
+    .form-container input {
+        font-size: 0.9rem;
+    }
+
+    .form-container button {
+        font-size: 0.9rem;
+    }
+}
