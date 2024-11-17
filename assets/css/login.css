@@ -2,7 +2,6 @@
     --primary-color: #a29bfe;
     --secondary-color: #ffeaa7;
     --text-color: #2d3436;
-    --background-color: #f5f6fa;
     --input-bg: #ffffff;
     --input-border: #dfe6e9;
     --input-focus: #81ecec;
@@ -16,13 +15,16 @@
 
 body {
     font-family: 'Raleway', sans-serif;
-    color: var(--text-color);
-    background-color: var(--background-color);
+    background-image: url('/assets/img/article.jpg'); /* 배경 이미지 경로 */
+    background-size: cover; /* 배경 이미지가 화면에 맞게 크기 조정 */
+    background-position: center center; /* 이미지가 화면 중앙에 위치 */
+    background-repeat: no-repeat; /* 배경 이미지 반복 방지 */
     display: flex;
     align-items: center;
     justify-content: center;
     min-height: 100vh;
 }
+
 
 .container {
     max-width: 400px;
