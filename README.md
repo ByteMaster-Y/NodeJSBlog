@@ -2,9 +2,10 @@
 
 Node.js와 Express를 기반으로 한 간단한 블로그 게시판 애플리케이션입니다. 사용자는 회원가입 후 로그인하여 게시판에 글을 작성하고, 수정 및 삭제할 수 있습니다.
 
-## 시연영상
+## 시연이미지
 
-[시연영상 링크](https://example.com)  
+![SCR-20241117-pmuz](https://github.com/user-attachments/assets/2efdcdf6-3340-432f-952e-8613dbe4299c)
+
 
 ## 개발
 
