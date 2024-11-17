@@ -10,6 +10,9 @@ Node.js와 Express를 기반으로 한 간단한 블로그 게시판 애플리�
 
 ![SCR-20241117-plij](https://github.com/user-attachments/assets/bc52ee5c-2700-4b86-8e5c-4af9f4eb4a33)
 
+![SCR-20241117-pqea](https://github.com/user-attachments/assets/f8870247-9b99-41d5-a938-4cb9b7bae3ac)
+
+
 ## 개발
 
 <div style="display: flex; flex-wrap: wrap; gap: 10px;">
