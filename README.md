@@ -6,6 +6,7 @@ Node.js와 Express를 기반으로 한 간단한 블로그 게시판 애플리�
 
 ![SCR-20241117-pmuz](https://github.com/user-attachments/assets/2efdcdf6-3340-432f-952e-8613dbe4299c)
 
+![SCR-20241117-pmcj](https://github.com/user-attachments/assets/45a15de2-382f-4c1e-99d3-770b75b1a839)
 
 ## 개발
 
