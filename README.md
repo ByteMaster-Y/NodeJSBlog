@@ -85,8 +85,6 @@ Node.js와 Express를 기반으로 한 간단한 블로그 게시판 애플리�
     - 브라우저에서 `http://localhost:3000`에 접속하여 게시판을 사용합니다.
   
 ## Sequence diagram
-![Untitled diagram-2024-11-17-092108](https://github.com/user-attachments/assets/378c7ce6-7ca3-4f4a-956e-add3662354dd)
-
 
 ## 라이선스
 
