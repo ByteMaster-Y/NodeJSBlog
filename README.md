@@ -47,6 +47,8 @@ Node.js와 Express를 기반으로 한 간단한 블로그 게시판 애플리�
 - **게시글 삭제**: 본인이 작성한 게시글을 삭제할 수 있습니다.
 - **페이징 기능**: 게시판 내 게시글을 페이징 할 수 있는 기능이 제공됩니다.
 
+## 프로세스
+![Untitled diagram-2024-11-17-092108](https://github.com/user-attachments/assets/378c7ce6-7ca3-4f4a-956e-add3662354dd)
 
 ## 사용 방법
 
